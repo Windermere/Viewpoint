@@ -28,9 +28,8 @@ module Viewpoint::EWS::SOAP
 
     def parse(opts = {})
       opts[:response_class] ||= EwsSoapResponse
-      # https://github.com/WinRb/Viewpoint/issues/116
-      # sax_parser.parse(@soap_resp)
-      sax_parser.parse(@soap_resp.gsub(/&#x[0-1]?[0-9a-eA-E];/, ' '))
+      @soap_resp.gsub!('version="1.0"', 'version="1.1"')
+      sax_parser.parse(@soap_resp)
       opts[:response_class].new @sax_doc.struct
     end
 
