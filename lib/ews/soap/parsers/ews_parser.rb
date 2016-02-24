@@ -30,7 +30,7 @@ module Viewpoint::EWS::SOAP
       opts[:response_class] ||= EwsSoapResponse
       # https://github.com/WinRb/Viewpoint/issues/116
       # sax_parser.parse(@soap_resp)
-      sax_parser.parse(@soap_resp.gsub(/&#x[0-1]?[0-9a-eA-E];/, ' '))
+      sax_parser.parse(@soap_resp.gsub(/&#x[0-1]?[0-9a-fA-F];/, ' '))
       opts[:response_class].new @sax_doc.struct
     end
 
