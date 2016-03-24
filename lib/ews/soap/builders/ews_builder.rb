@@ -1085,6 +1085,14 @@ module Viewpoint::EWS::SOAP
       }
     end
 
+    def end_date_recurrence!(item)
+      nbuild[NS_EWS_TYPES].EndDateRecurrence {
+        item.each_pair { |k, v|
+          self.send("#{k}!", v)
+        }
+      }
+    end
+
     def number_of_occurrences!(count)
       nbuild[NS_EWS_TYPES].NumberOfOccurrences(count)
     end
