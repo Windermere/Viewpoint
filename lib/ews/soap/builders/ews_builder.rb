@@ -1049,6 +1049,22 @@ module Viewpoint::EWS::SOAP
       }
     end
 
+    def absolute_monthly_recurrence!(item)
+      nbuild[NS_EWS_TYPES].AbsoluteMonthlyRecurrence {
+        item.each_pair { |k, v|
+          self.send("#{k}!", v)
+        }
+      }
+    end
+
+    def relative_monthly_recurrence!(item)
+      nbuild[NS_EWS_TYPES].RelativeMonthlyRecurrence {
+        item.each_pair { |k, v|
+          self.send("#{k}!", v)
+        }
+      }
+    end
+
     def interval!(num)
       nbuild[NS_EWS_TYPES].Interval(num)
     end
