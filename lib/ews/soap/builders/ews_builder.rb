@@ -1235,6 +1235,10 @@ module Viewpoint::EWS::SOAP
       nbuild[NS_EWS_TYPES].StartDate sd[:text]
     end
 
+    def end_date!(sd)
+      nbuild[NS_EWS_TYPES].EndDate sd[:text]
+    end
+
     def due_date!(dd)
       nbuild[NS_EWS_TYPES].DueDate format_time(dd[:text])
     end
