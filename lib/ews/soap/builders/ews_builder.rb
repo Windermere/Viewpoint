@@ -1061,6 +1061,10 @@ module Viewpoint::EWS::SOAP
       nbuild[NS_EWS_TYPES].DaysOfWeek(weekday)
     end
 
+    def first_day_of_week!(weekday)
+      nbuild[NS_EWS_TYPES].FirstDayOfWeek(weekday)
+    end
+
     def day_of_week_index!(index)
       nbuild[NS_EWS_TYPES].DayOfWeekIndex(index)
     end
