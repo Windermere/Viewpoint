@@ -29,6 +29,8 @@ class Viewpoint::EWS::Connection
   # @option opts [Fixnum] :ssl_verify_mode
   # @option opts [Fixnum] :receive_timeout override the default receive timeout
   #   seconds
+  # @option opts [Fixnum] :connect_timeout override the default connect timeout
+  #   seconds
   # @option opts [Array]  :trust_ca an array of hashed dir paths or a file
   # @option opts [String] :user_agent the http user agent to use in all requests
   def initialize(endpoint, opts = {})

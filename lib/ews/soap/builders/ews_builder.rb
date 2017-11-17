@@ -370,6 +370,10 @@ module Viewpoint::EWS::SOAP
       nbuild[NS_EWS_TYPES].Birthday(name)
     end
 
+    def birthday_local!(name)
+      nbuild[NS_EWS_TYPES].BirthdayLocal(name)
+    end
+
     def business_home_page!(name)
       nbuild[NS_EWS_TYPES].BusinessHomePage(name)
     end
@@ -424,6 +428,10 @@ module Viewpoint::EWS::SOAP
 
     def wedding_anniversary!(name)
       nbuild[NS_EWS_TYPES].WeddingAnniversary(name)
+    end
+
+    def wedding_anniversary_local!(name)
+      nbuild[NS_EWS_TYPES].WeddingAnniversaryLocal(name)
     end
 
     def phonetic_full_name!(name)
